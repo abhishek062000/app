@@ -25,8 +25,8 @@ jobs:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           IMAGE_TAG: latest
         run: |
-          docker build -t $ECR_REGISTRY/app:$IMAGE_TAG .
-          docker push $ECR_REGISTRY/app:$IMAGE_TAG
+          docker build -t $ECR_REGISTRY/my-flask-app:$IMAGE_TAG .
+          docker push $ECR_REGISTRY/my-flask-app:$IMAGE_TAG
 
       - name: Deploy to Amazon ECS
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
